@@ -311,7 +311,7 @@ class Configuration implements ConfigurationInterface
                     ->end()
                 ->end()
                 ->variableNode('localconfig')
-                    ->info('Allows to set TL_CONFIG variables. Note that any configuration set here can not be edited in the back end anymore.')
+                    ->info('Allows to set TL_CONFIG variables. Note that any property set here will override the localconfig.php file, so changing these in the Contao back end will not have any effect.')
                 ->end()
             ->end()
         ;
