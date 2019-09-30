@@ -85,7 +85,7 @@ class Configuration implements ConfigurationInterface
                 ->end()
                 ->scalarNode('preview_script')
                     ->cannotBeEmpty()
-                    ->info('The default preview script is preview.php. This allows to define a custom script if desired.')
+                    ->info('Entry point script that bypasses the front end cache for preview features, if necessary. The Contao Managed Edition uses "preview.php" here, but it can be customize for a regular Symfony application.')
                     ->defaultValue('')
                     ->validate()
                         ->always(
