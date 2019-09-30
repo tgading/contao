@@ -86,7 +86,7 @@ class Configuration implements ConfigurationInterface
                 ->end()
                 ->scalarNode('preview_script')
                     ->cannotBeEmpty()
-                    ->info('Entry point script that bypasses the front end cache for preview features, if necessary. The Contao Managed Edition uses "preview.php" here, but it can be customize for a regular Symfony application.')
+                    ->info('Entry point script that bypasses the front end cache for preview features, if necessary. The Contao Managed Edition uses "preview.php" here, but it can be customized for a regular Symfony application.')
                     ->defaultValue('')
                     ->validate()
                         ->always(
