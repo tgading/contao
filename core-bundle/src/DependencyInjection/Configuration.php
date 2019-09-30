@@ -176,7 +176,7 @@ class Configuration implements ConfigurationInterface
                             ->defaultValue(false)
                         ->end()
                         ->arrayNode('sizes')
-                            ->info('This allows to define image sizes directly in the configuration, rather than just via the tl_image_size table.')
+                            ->info('This allows to define image sizes directly in the configuration in addition to the Contao back end (tl_image_size table).')
                             ->useAttributeAsKey('name')
                             ->validate()
                                 ->always(
