@@ -46,6 +46,7 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->scalarNode('web_dir')
                     ->info('Absolute path to the web directory. Make sure to use the %kernel.project_dir% parameter for the absolute path prefix.')
+                    ->example('%kernel.project_dir%/web')
                     ->cannotBeEmpty()
                     ->defaultValue($this->canonicalize($this->projectDir.'/web'))
                     ->validate()
