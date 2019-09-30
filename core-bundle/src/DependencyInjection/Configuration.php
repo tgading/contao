@@ -173,6 +173,7 @@ class Configuration implements ConfigurationInterface
                             ->end()
                         ->end()
                         ->booleanNode('reject_large_uploads')
+                            ->info('Allows to reject images uploaded via Contao\'s file manager, if they exceed the dimensions of localconfig.gdMaxImgWidth and localconfig.gdMaxImgHeight.')
                             ->defaultValue(false)
                         ->end()
                         ->arrayNode('sizes')
