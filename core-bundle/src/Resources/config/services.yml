@@ -535,6 +535,14 @@ services:
         alias: 'contao.search.indexer.delegating'
         public: true
 
+    contao.security.authentication_failure_handler:
+        class: Contao\CoreBundle\Security\Authentication\AuthenticationFailureHandler
+        arguments:
+            - '@http_kernel'
+            - '@security.http_utils'
+            - []
+            - '@?logger'
+
     contao.security.authentication_listener:
         class: Contao\CoreBundle\Security\Authentication\ContaoLoginAuthenticationListener
         arguments:
@@ -550,14 +558,6 @@ services:
             - '@?event_dispatcher'
         tags:
             - { name: monolog.logger, channel: security }
-
-    contao.security.authentication_failure_handler:
-        class: Contao\CoreBundle\Security\Authentication\AuthenticationFailureHandler
-        arguments:
-            - '@http_kernel'
-            - '@security.http_utils'
-            - []
-            - '@?logger'
 
     contao.security.authentication_provider:
         class: Contao\CoreBundle\Security\Authentication\Provider\AuthenticationProvider
